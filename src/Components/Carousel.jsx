@@ -6,7 +6,7 @@ import boiled from '../Images/boiled.png';
 import idly from '../Images/idly.png';
 import masoori from '../Images/masoori.png';
 import ponni from '../Images/ponni.png';
-
+import MM from "../Images/MM.png"
 const Carousel = () => {
   const products = [
     {
@@ -36,18 +36,16 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="relative w-full mt-8" id='pro'>
+    <div className="relative w-full min-h-[70vh] mt-8" id='pro'>
 <div className="my-8">
-      <div className="relative inline-block">
-        <h1 className="font-[Newheading] text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-[#5FCF80]">
-          Our Products
-        </h1>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "80px" }}
-          transition={{ duration: 1 }}
-          className="absolute left-0 -bottom-2 h-[3px] bg-[#5FCF80]"
-        />
+      <div className="relative">
+  
+       <div className="flex flex-col items-center justify-around">
+                    <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl  text-[#9f0712]">
+                    Our Products
+                    </h1>
+              <img src={MM} className="w-70" alt="" />
+            </div>
       </div>
     </div>
       <Swiper
@@ -62,7 +60,7 @@ const Carousel = () => {
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 10 },
           768: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 30 },
+          1024: { slidesPerView: 5, spaceBetween: 30 },
         }}
       >
         {products.map((product, index) => (
@@ -71,12 +69,12 @@ const Carousel = () => {
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                className="w-90 object-cover rounded-lg shadow-lg"
               />
-              <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-60 p-4 rounded-lg">
+              <div className="absolute bottom-4 left-4 text-white bg-[#9f0712] bg-opacity-60 p-2 rounded-lg">
                 <h3 className="text-xl font-[Poppins]">{product.title}</h3>
-                <p className="text-lg font-[Poppins] text-yellow-500">{product.price}</p>
-                <p className="mt-2 font-[Poppins] text-sm">{product.description}</p>
+                {/* <p className="text-lg font-[Poppins] text-yellow-500">{product.price}</p>
+                <p className="mt-2 font-[Poppins] text-sm">{product.description}</p> */}
               </div>
             </div>
           </SwiperSlide>

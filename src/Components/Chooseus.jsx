@@ -7,37 +7,38 @@ import { MdOutlineAutoMode } from "react-icons/md";
 import { PiPlantLight } from "react-icons/pi";
 import { VscBook } from "react-icons/vsc";
 import { GiWindTurbine } from "react-icons/gi";
+import MM from "../Images/MM.png"
 
 const reasons = [
   {
     title: "Diabetic Friendly",
     description: "Healthy eating helps you strike the right balance, necessary for managing your blood sugar levels.",
-    icon: <PiArrowsClockwiseLight className="text-4xl text-[#5FCF80]" />, // Quality icon
+    icon: <PiArrowsClockwiseLight className="text-4xl text-[#9f0712]" />, // Quality icon
   },
   {
     title: "High Fiber Content",
     description: "Grains rich in fiber aids in keeping your hunger satiated for longer and improves digestion.",
-    icon: <TbWorldUpload  className="text-4xl text-[#5FCF80]" />, // Trust icon
+    icon: <TbWorldUpload  className="text-4xl text-[#9f0712]" />, // Trust icon
   },
   {
     title: "Automated Processing",
     description: "Automated processing helps in retaining the colour and the nutritional value of rice.",
-    icon: <MdOutlineAutoMode className="text-4xl text-[#5FCF80]" />, // Support icon
+    icon: <MdOutlineAutoMode className="text-4xl text-[#9f0712]" />, // Support icon
   },
   {
     title: "Laser Quality Control",
     description: "This cutting-edge technology aids in accurate testing of products to ensure adherence to quality.",
-    icon: <PiPlantLight className="text-4xl text-[#5FCF80]" />, // Gift icon
+    icon: <PiPlantLight className="text-4xl text-[#9f0712]" />, // Gift icon
   },
   {
     title: "14 Month Old grains",
     description: "Aged rice is nutritionally beneficial and results in enhanced flavor and texture.",
-    icon: <VscBook className="text-4xl text-[#5FCF80]" />, // Tools icon
+    icon: <VscBook className="text-4xl text-[#9f0712]" />, // Tools icon
   },
   {
     title: "Wind Energy",
     description: "Sustainable energy consumption for parboiling rice",
-    icon: <GiWindTurbine className="text-4xl text-[#5FCF80]" />, // Globe icon
+    icon: <GiWindTurbine className="text-4xl text-[#9f0712]" />, // Globe icon
   },
 ];
 
@@ -47,15 +48,13 @@ const WhyChooseUs = () => {
       {/* Section Heading with animation */}
       <div className="text-center mb-8">
         <div className="relative inline-block">
-          <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-[#5FCF80]">
-            Why Choose Us?
-          </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "80px" }}
-            transition={{ duration: 1 }}
-            className="absolute left-0 -bottom-2 h-[3px] bg-[#5FCF80]"
-          />
+         
+          <div className="flex flex-col items-center justify-around">
+                        <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-5 text-[#9f0712]">
+                        Why Choose Us?
+                        </h1>
+                  <img src={MM} className="w-70" alt="" />
+                </div>
         </div>
       </div>
 
@@ -80,7 +79,7 @@ const WhyChooseUs = () => {
             </motion.div>
 
             {/* Title and Description */}
-            <h3 className="text-xl font-semibold text-center mb-2 text-[#5FCF80]">
+            <h3 className="text-xl font-semibold text-center mb-2 text-[#9f0712]">
               {reason.title}
             </h3>
             <p className="text-md text-center text-gray-500">{reason.description}</p>

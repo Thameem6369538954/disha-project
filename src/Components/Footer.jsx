@@ -7,18 +7,17 @@ const Footer = () => {
 
   const handleSubscription = (e) => {
     e.preventDefault();
-    // Handle subscription logic here (e.g., send email to the server or store in DB)
     setSubscribed(true);
   };
 
   return (
     <div className="bg-[#333] text-white py-10 font-[poppins]">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">About Us</h2>
-            <p className="text-sm">
+            <h2 className="text-xl md:text-2xl font-semibold">About Us</h2>
+            <p className="text-sm leading-relaxed">
               GSNR Rice Industries Private Limited is committed to providing
               pesticide-free, premium rice from the heart of the Cauvery Delta.
             </p>
@@ -26,20 +25,20 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Quick Links</h2>
+            <h2 className="text-xl md:text-2xl font-semibold">Quick Links</h2>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-sm hover:text-[#5FCF80] transition-all">
+                <a href="#about" className="text-sm hover:text-[#9f0712] transition-all">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-sm hover:text-[#5FCF80] transition-all">
+                <a href="#services" className="text-sm hover:text-[#9f0712] transition-all">
                   Our Services
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-sm hover:text-[#5FCF80] transition-all">
+                <a href="#contact" className="text-sm hover:text-[#9f0712] transition-all">
                   Contact Us
                 </a>
               </li>
@@ -48,18 +47,18 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Follow Us</h2>
+            <h2 className="text-xl md:text-2xl font-semibold">Follow Us</h2>
             <div className="flex space-x-4">
-              <a href="#" className="text-2xl hover:text-[#5FCF80]">
+              <a href="#" className="text-xl md:text-2xl hover:text-[#9f0712]">
                 <FaFacebook />
               </a>
-              <a href="#" className="text-2xl hover:text-[#5FCF80]">
+              <a href="#" className="text-xl md:text-2xl hover:text-[#9f0712]">
                 <FaTwitter />
               </a>
-              <a href="#" className="text-2xl hover:text-[#5FCF80]">
+              <a href="#" className="text-xl md:text-2xl hover:text-[#9f0712]">
                 <FaInstagram />
               </a>
-              <a href="#" className="text-2xl hover:text-[#5FCF80]">
+              <a href="#" className="text-xl md:text-2xl hover:text-[#9f0712]">
                 <FaLinkedin />
               </a>
             </div>
@@ -67,47 +66,49 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Contact Info</h2>
+            <h2 className="text-xl md:text-2xl font-semibold">Contact Info</h2>
             <p className="text-sm">Phone: +91 123 456 7890</p>
             <p className="text-sm">Email: info@gsnr.com</p>
 
-            {/* Addresses */}
             <h3 className="text-lg font-semibold">Our Addresses:</h3>
-            <p className="text-sm">#21, C V Raman Road,
-Alwarpet,
-Chennai-600018</p>
-            <p className="text-sm">#56, Kodikal Street,
-Mathanam South, Poovalur,
-Lalgudi, Tiruchirappalli - 621 712</p>
+            <p className="text-sm leading-relaxed">
+              #21, C V Raman Road, Alwarpet, Chennai-600018
+            </p>
+            <p className="text-sm leading-relaxed">
+              #56, Kodikal Street, Mathanam South, Poovalur, Lalgudi, Tiruchirappalli - 621 712
+            </p>
           </div>
         </div>
 
         {/* Subscription Section */}
-        <div className="mt-8 border-t border-[#5FCF80] pt-8 text-center">
-          <h2 className="text-2xl font-semibold mb-4">Subscribe to Our Newsletter</h2>
-          <form onSubmit={handleSubscription} className="flex justify-center items-center">
+        <div className="mt-10 border-t border-[#9f0712] pt-8 text-center">
+          <h2 className="text-xl md:text-2xl font-semibold mb-4">Subscribe to Our Newsletter</h2>
+          <form
+            onSubmit={handleSubscription}
+            className="flex flex-col sm:flex-row justify-center items-center gap-4"
+          >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="px-4 py-2 w-[300px] sm:w-[400px] border border-[#5FCF80] rounded-l-lg"
+              className="px-4 py-2 w-full sm:w-[300px] border border-[#9f0712] rounded-lg sm:rounded-l-lg sm:rounded-r-none"
               required
             />
             <button
               type="submit"
-              className="px-6 py-2 bg-[#5FCF80] text-white rounded-r-lg hover:bg-[#4CAF50] transition-all duration-300"
+              className="px-6 py-2 w-full sm:w-auto bg-[#9f0712] text-white rounded-lg sm:rounded-r-lg sm:rounded-l-none hover:bg-[#4CAF50] transition-all duration-300"
             >
               Subscribe
             </button>
           </form>
           {subscribed && (
-            <p className="text-sm text-[#5FCF80] mt-4">Thank you for subscribing!</p>
+            <p className="text-sm text-[#9f0712] mt-4">Thank you for subscribing!</p>
           )}
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-8 border-t border-[#5FCF80] pt-4 text-center text-sm">
+        <div className="mt-8 border-t border-[#9f0712] pt-4 text-center text-xs sm:text-sm">
           <p>&copy; 2025 GSNR Rice Industries Private Limited. All rights reserved.</p>
         </div>
       </div>

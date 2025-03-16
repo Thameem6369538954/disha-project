@@ -5,6 +5,8 @@ import "swiper/css/pagination"; // Pagination styles
 import "swiper/css/navigation"; // Navigation styles
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"; // For quote icons
 import { motion } from "framer-motion"; // For animation
+import MM from "../Images/MM.png"
+
 
 const testimonials = [
   {
@@ -43,15 +45,12 @@ const TestimonialsCarousel = () => {
       {/* Section Heading */}
       <div className="text-center mb-8">
         <div className="relative inline-block">
-          <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#5FCF80]">
-            Our Client Says
-          </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "80px" }}
-            transition={{ duration: 1 }}
-            className="absolute left-0 -bottom-2 h-[3px] bg-[#5FCF80]"
-          />
+          <div className="flex flex-col items-center justify-around">
+                                  <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-5 text-[#9f0712]">
+                                  Our Client Says
+                                  </h1>
+                            <img src={MM} className="w-70" alt="" />
+                          </div>
         </div>
       </div>
 
@@ -74,9 +73,9 @@ const TestimonialsCarousel = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-sm mx-auto">
               {/* Quote Icons */}
               <div className="relative mb-4">
-                <FaQuoteLeft className="absolute top-0 -left-6 text-2xl text-[#5FCF80]" />
+                <FaQuoteLeft className="absolute top-0 -left-6 text-2xl text-[#9f0712]" />
                 <p className="text-1xl text-gray-500 italic">{testimonial.feedback}</p>
-                <FaQuoteRight className="absolute bottom-0 right-0 text-2xl text-[#5FCF80]" />
+                <FaQuoteRight className="absolute bottom-0 right-0 text-2xl text-[#9f0712]" />
               </div>
 
               {/* Testimonial Details */}
@@ -87,7 +86,7 @@ const TestimonialsCarousel = () => {
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="text-lg font-semibold text-[#5FCF80]">
+                  <h4 className="text-lg font-semibold text-[#9f0712]">
                     {testimonial.name}
                   </h4>
                   <p className="text-sm text-gray-500">{testimonial.position}</p>

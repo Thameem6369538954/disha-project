@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <div id='home'>
         <Header />
-     <Aboutus />
      <Carousel />
+     <Aboutus />
      <Chooseus />
      <Testimonials />
      <GetInTouch />
