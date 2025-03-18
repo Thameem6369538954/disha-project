@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import { BiHappyHeartEyes } from "react-icons/bi";
+import map from "../Images/map.jpg"
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,7 +21,9 @@ const GetInTouch = () => {
   };
 
   return (
-    <section className="py-16 px-4  font-[poppins] " id="con">
+    <section
+    style={{backgroundImage:`url(${map})`}}
+    className="py-16 px-4  font-[poppins] bg-center bg-cover relative" id="con">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-around">
         {/* Left Side: Heading & Paragraph */}
         <div className="mb-8 md:mb-0 md:w-1/2 text-center md:text-left">

@@ -8,7 +8,7 @@ import { PiPlantLight } from "react-icons/pi";
 import { VscBook } from "react-icons/vsc";
 import { GiWindTurbine } from "react-icons/gi";
 import MM from "../Images/MM.png"
-import Nw from "../Images/Nw.jpg"
+import Nw from "../Images/Nw.jpeg"
 
 
 const reasons = [
@@ -46,7 +46,7 @@ const reasons = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="my-12 px-4 font-[poppins] bg-cover bg-center  min-h-[130vh]" 
+    <div className="my-12 px-4 font-[poppins] bg-cover bg-center  min-h-auto p-10" 
     style={{backgroundImage :`url(${Nw})`}
   }
     >
