@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SL from "../Images/SL.jpg";
 import SLA from "../Images/SLA.jpg";
+import SLB from "../Images/SLB.jpg";
 import boiled from "../Images/boiled.png";
 import idly from "../Images/idly.png";
 import masoori from "../Images/masoori.png";
@@ -30,7 +31,7 @@ const Header = () => {
         {/* Slide 1 */}
         <div className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[90vh]">
           <div
-            className="absolute top-0 left-0 w-full h-full bg-cover bg-center rounded-xl shadow-lg"
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-center "
             style={{ backgroundImage: `url(${SL})` }}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 bg-opacity-50 rounded-xl">
@@ -40,7 +41,7 @@ const Header = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[#9f0712] font-[Wonder] text-4xl sm:text-6xl lg:text-8xl font-extrabold tracking-wide -mt-30"
+              className="text-[#9f0712]  font-[Wonder] text-4xl sm:text-6xl lg:text-8xl font-extrabold tracking-wide -mt-30"
             >
               {["World’s", "No.1", "Rice", "Brand"].map((word, index) => (
                 <motion.span
@@ -88,10 +89,10 @@ const Header = () => {
         </div>
 
         {/* Slide 2 */}
-        <div className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[90vh]">
+        {/* <div className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[90vh]">
           <div
-            className="absolute top-0 left-0 w-full h-full bg-cover bg-center rounded-xl shadow-lg"
-            style={{ backgroundImage: `url(${SLA})` }}
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-center "
+            style={{ backgroundImage: `url(${SL})` }}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-opacity-50 rounded-xl px-4 sm:px-6">
             <motion.h1
@@ -103,13 +104,13 @@ const Header = () => {
               Premium Quality
             </motion.h1>
           </div>
-        </div>
+        </div> */}
 
         {/* Slide 3 */}
         <div className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[90vh]">
           <div
-            className="absolute top-0 left-0 w-full h-full bg-cover bg-center rounded-xl shadow-lg"
-            style={{ backgroundImage: `url(${SL})` }}
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-center "
+            style={{ backgroundImage: `url(${SLB})` }}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-opacity-50 rounded-xl px-4 sm:px-6">
             <motion.h1

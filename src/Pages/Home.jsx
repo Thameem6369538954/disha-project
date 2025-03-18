@@ -5,6 +5,7 @@ import Aboutus from '../Components/Aboutus'
 import Chooseus from "../Components/Chooseus"
 import Testimonials from '../Components/Testimonials'
 import GetInTouch from '../Components/Getintouch'
+import Bennar from '../Components/Bennar'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Header />
      <Carousel />
      <Aboutus />
+     <Bennar />
      <Chooseus />
      <Testimonials />
      <GetInTouch />

@@ -32,3 +32,19 @@
 ::-webkit-scrollbar {
   display: none;
 }
+/* Global font smoothing fix */
+/* App.css */
+html, body {
+  height: auto;
+  overflow: auto;
+}
+
+[data-scroll-container] {
+  min-height: 100vh;
+  position: relative;
+}
+
+[data-scroll-section] {
+  position: relative;
+  z-index: 1;
+}

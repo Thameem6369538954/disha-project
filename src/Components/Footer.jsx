@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import FooterImg from "../Images/FooterImg.jpg";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -11,8 +12,13 @@ const Footer = () => {
   };
 
   return (
-    <div className="bg-[#333] text-white py-10 font-[poppins]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+  className="text-white py-10 font-[poppins] bg-cover bg-center bg-no-repeat min-h-[100vh]"
+  style={{ backgroundImage: `url(${FooterImg})` }}
+>
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
@@ -69,7 +75,6 @@ const Footer = () => {
             <h2 className="text-xl md:text-2xl font-semibold">Contact Info</h2>
             <p className="text-sm">Phone: +91 123 456 7890</p>
             <p className="text-sm">Email: info@gsnr.com</p>
-
             <h3 className="text-lg font-semibold">Our Addresses:</h3>
             <p className="text-sm leading-relaxed">
               #21, C V Raman Road, Alwarpet, Chennai-600018

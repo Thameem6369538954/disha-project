@@ -1,92 +1,104 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Weet from "../Images/Weet.jpg";
-import Truck from "../Images/Truck.jpg";
-import CertA from "../Certif/CertA.jpeg"
-import CertB from "../Certif/CertB.jpeg"
-import CertC from "../Certif/CertC.jpeg"
-import MM from "../Images/MM.png"
-const images = [CertA, CertB,CertC]; // Image Array
+import CertA from "../Certif/CertA.jpeg";
+import CertB from "../Certif/CertB.jpeg";
+import CertC from "../Certif/CertC.jpeg";
+import MM from "../Images/MM.png";
+
+const images = [
+  { src: CertA, label: "ISO 9001: Certified" },
+  { src: CertB, label: "Premium Quality Standards" },
+  { src: CertC, label: "Trusted by Customers" },
+];
 
 const Aboutus = () => {
   const [index, setIndex] = useState(0);
 
-  // Auto-change images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
-  return (
+  const goToSlide = (idx) => {
+    setIndex(idx);
+  };
 
-    <div>
-      <div className="flex flex-col items-center justify-around">
-              <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-5 text-[#9f0712]">
-               Why We are Special
-              </h1>
-        <img src={MM} className="w-70" alt="" />
+  return (
+    <div className="bg-gradient-to-b from-white  py-10 px-4 sm:px-8 lg:px-20">
+      {/* Heading Section */}
+      <div className="flex flex-col items-center justify-center mb-10">
+        <h1 className="font-[Wonder] text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl py-5 text-[#9f0712] drop-shadow-md">
+          Why We are Special
+        </h1>
+        <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="MM" />
       </div>
 
-<div className="relative inline-block">
-            
-            </div>
-    <div className=""  id="target">
-      <div className="w-full flex flex-col items-center justify-around md:flex-row relative ">
-        {/* Left Box - Animated Text */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+        {/* Left Text Box */}
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-[90%] md:w-[80%] lg:w-[40%]  min-h-[400px] md:min-h-[100px] flex flex-col items-center justify-center  p-6 rounded-lg  bg-white"
+          className="w-full md:w-1/2 space-y-6  p-8 rounded-2xl shadow-xl"
         >
-          <div className="relative space-y-4">
-            
+          <p className="font-[Poppins] text-lg sm:text-xl text-gray-800 leading-relaxed">
+            <span className="font-[Heading] text-[#9f0712] text-2xl sm:text-3xl font-semibold">
+              Cauvery
+            </span>
+            , the distinguished Ponni rice brand curated by GSNR Rice Industries Private Limited, epitomizes excellence in the agro-products realm. Established in 2008, we are a vanguard processor and purveyor of premium agricultural commodities in Tamil Nadu, anchored in a heritage spanning three generations.
+          </p>
 
-            <p className="font-[Poppins] text-2xl sm:text-base text-gray-700 leading-relaxed" >
-              <span className="font-[Heading] text-lg sm:text-2xl text-[#9f0712]">
-                Cauvery
-              </span>
-              ,the distinguished Ponni rice brand curated by GSNR Rice Industries Private Limited, epitomizes excellence in the agro-products realm. Established in 2008, we have firmly established ourselves as a vanguard processor and purveyor of premium agricultural commodities in the Tamil Nadu region. Anchored in a heritage spanning three generations, our unwavering commitment lies in furnishing pesticide-free, nutritionally superior sustenance.
-            </p>
-
-            {/* <p className="font-[Poppins] text-sm sm:text-base text-gray-700 leading-relaxed">
-            We meticulously source our grains from the esteemed agrarians of the Cauvery Delta, upholding exacting quality criteria. These grains, meticulously handpicked to meet our rigorous benchmarks, undergo a patient aging process of fourteen months, resulting in the zenith of authenticity and excellence. Our advanced milling facilities, strategically located in Poovalur and Lalgudi, seamlessly integrate cutting-edge technology across every phase of rice production.
-            </p>
-            <p className="font-[Poppins] text-sm sm:text-base text-gray-700 leading-relaxed">
-            A devoted cadre of technicians and connoisseurs of quality meticulously oversee all facets of our operations, rigorously upholding the most stringent hygiene protocols. This assiduousness ensures that our final product encapsulates unadulterated flavors of the highest international caliber.
-            </p> */}
-    
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4 px-6 py-2 bg-[#9f0712] text-white font-semibold rounded-lg shadow-md hover:bg-[#4CAF50] transition-all duration-300"
-            >
-              Know More...
-            </motion.button>
-          </div>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 bg-gradient-to-r from-[#9f0712] to-[#bf2e2e] text-white rounded-full font-semibold shadow-md hover:from-[#4CAF50] hover:to-[#45a049] transition-all duration-300"
+          >
+            Know More...
+          </motion.button>
         </motion.div>
 
-        {/* Right Box - Auto Sliding Images */}
-        <div className="w-[90%] md:w-[30%] min-h-[430px] md:min-h-[500px] absolute   bg-white flex justify-center items-center overflow-hidden rounded-lg  relative">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={index}
-              src={images[index]}
-              alt="Sliding Image"
-              className="w-full h-full object-cover absolute"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-            />
-          </AnimatePresence>
-        </div>
-      </div>
+        {/* Right Carousel */}
+      {/* Right Carousel */}
+<div className="w-full md:w-1/2 relative">
+  <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white flex items-center justify-center p-6">
+    <AnimatePresence mode="wait">
+      <motion.img
+        key={index}
+        src={images[index].src}
+        alt="Certification"
+        className="w-3/4 h-auto object-contain"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      />
+    </AnimatePresence>
+
+    {/* Overlay text */}
+    <div className="absolute bottom-4 left-4 bg-opacity-80 px-4 py-2 rounded-xl text-[#9f0712] font-semibold text-sm shadow-md">
+      {images[index].label}
     </div>
+  </div>
+
+  {/* Dots */}
+  <div className="flex justify-center mt-4 gap-3">
+    {images.map((_, i) => (
+      <button
+        key={i}
+        onClick={() => goToSlide(i)}
+        className={`h-3 w-3 rounded-full transition-all ${
+          index === i
+            ? "bg-[#9f0712] scale-125 shadow"
+            : "bg-gray-300 hover:bg-[#9f0712]"
+        }`}
+      ></button>
+    ))}
+  </div>
+</div>
+
+      </div>
     </div>
   );
 };

@@ -1,96 +1,68 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; // Import Swiper styles
-import "swiper/css/pagination"; // Pagination styles
-import "swiper/css/navigation"; // Navigation styles
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"; // For quote icons
-import { motion } from "framer-motion"; // For animation
-import MM from "../Images/MM.png"
-
-
+import { Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import MM from "../Images/MM.png";
 const testimonials = [
   {
-    name: "Ravi Kumar",
-    position: "Rice Farmer",
-    feedback:
-      "The high-quality rice seeds provided by this store have drastically improved my harvest. I'm now able to supply the market with premium rice!",
-    avatar: "https://i.imgur.com/LfDVm98.jpg", // Indian farmer image
+    name: "Amit Sharma",
+    position: "Retailer",
+    feedback: "Their rice products are consistently high quality, my customers are always satisfied!",
+    avatar: "https://i.imgur.com/6fLZp2c.jpg",
   },
   {
-    name: "Meera Devi",
-    position: "Rice Mill Owner",
-    feedback:
-      "As a mill owner, I rely on this store for the best raw materials. Their rice grains are consistently top-notch, ensuring that we produce the finest rice.",
-    avatar: "https://i.imgur.com/KoFfFpi.jpg", // Indian woman image
+    name: "Pooja Singh",
+    position: "Restaurant Owner",
+    feedback: "Top-grade rice! My dishes taste authentic and customers love it!",
+    avatar: "https://i.imgur.com/NXhRvoF.jpg",
   },
   {
-    name: "Suresh Yadav",
-    position: "Agricultural Expert",
-    feedback:
-      "This rice store offers excellent grains and agricultural tools that make rice farming more efficient. Their advice has been invaluable in enhancing crop yields.",
-    avatar: "https://i.imgur.com/Kz5fV1d.jpg", // Indian man image
+    name: "Vikram Patel",
+    position: "Wholesaler",
+    feedback: "Bulk orders always arrive on time and the grains are top-notch!",
+    avatar: "https://i.imgur.com/RO6b4cr.jpg",
   },
   {
-    name: "Nisha Rani",
-    position: "Rice Distributor",
-    feedback:
-      "We depend on this store for reliable rice supplies. Their products always meet our quality standards and satisfy our customers.",
-    avatar: "https://i.imgur.com/FdsyU82.jpg", // Indian woman image
+    name: "Anita Verma",
+    position: "Catering Service",
+    feedback: "Perfect rice every time! It's helped elevate my catering business.",
+    avatar: "https://i.imgur.com/YjA7j4H.jpg",
   },
 ];
 
-const TestimonialsCarousel = () => {
+const ModernTestimonialsCarousel = () => {
   return (
-    <div className="my-12 px-4 font-[poppins]">
-      {/* Section Heading */}
-      <div className="text-center mb-8">
-        <div className="relative inline-block">
-          <div className="flex flex-col items-center justify-around">
-                                  <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-5 text-[#9f0712]">
-                                  Our Client Says
-                                  </h1>
-                            <img src={MM} className="w-70" alt="" />
-                          </div>
-        </div>
+    <div className="my-24 px-6 md:px-20">
+ <div className="flex flex-col items-center justify-center mb-10">
+        <h1 className="font-[Wonder] text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl py-5 text-[#9f0712] drop-shadow-md">
+        What Our Clients Say
+        </h1>
+        <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="MM" />
       </div>
-
-      {/* Swiper Testimonial Carousel */}
       <Swiper
-        spaceBetween={50} // Spacing between slides
-        slidesPerView={1} // Display 1 slide at a time
-        pagination={{ clickable: true }} // Enable clickable pagination
-        loop={true} // Enable looping of slides
-        autoplay={{
-          delay: 3000, // Auto-slide every 3 seconds
-          disableOnInteraction: false, // Keep autoplay even when interacting
+        spaceBetween={40}
+        pagination={{ clickable: true }}
+        loop={true}
+        autoplay={{ delay: 4000 }}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          1024: { slidesPerView: 2 },
         }}
-        effect="fade" // Fade effect for transitions
-        className="mySwiper"
-        navigation={false} // Remove side navigation arrows
+        modules={[Pagination, Autoplay]}
       >
-        {testimonials.map((testimonial, index) => (
+        {testimonials.map((t, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-sm mx-auto">
-              {/* Quote Icons */}
-              <div className="relative mb-4">
-                <FaQuoteLeft className="absolute top-0 -left-6 text-2xl text-[#9f0712]" />
-                <p className="text-1xl text-gray-500 italic">{testimonial.feedback}</p>
-                <FaQuoteRight className="absolute bottom-0 right-0 text-2xl text-[#9f0712]" />
-              </div>
-
-              {/* Testimonial Details */}
-              <div className="flex items-center justify-start">
+            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+              <div className="flex flex-col items-center text-center">
                 <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
+                  src={t.avatar}
+                  alt={t.name}
+                  className="w-20 h-20 rounded-full object-cover border-4 border-[#9f0712] mb-4"
                 />
-                <div>
-                  <h4 className="text-lg font-semibold text-[#9f0712]">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-gray-500">{testimonial.position}</p>
-                </div>
+                <h4 className="text-xl font-semibold text-[#9f0712]">{t.name}</h4>
+                <p className="text-sm text-gray-500 mb-4">{t.position}</p>
+                <p className="text-gray-700 leading-relaxed italic">"{t.feedback}"</p>
               </div>
             </div>
           </SwiperSlide>
@@ -100,4 +72,4 @@ const TestimonialsCarousel = () => {
   );
 };
 
-export default TestimonialsCarousel;
+export default ModernTestimonialsCarousel;

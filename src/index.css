@@ -5,5 +5,7 @@ body{
     position: relative;
     background-position: center;
     background-size: cover;
+    min-height: auto;
+    width: 100%;
 }
   
