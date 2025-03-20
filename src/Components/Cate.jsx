@@ -10,12 +10,13 @@ const Cate = () => {
     <div>
      
         <div>
-        <div className="bg-gradient-to-b from-white py-10 px-4">
+        <div className=" relative bg-gradient-to-b from-white py-10 px-4 ">
+          <img src="" alt="" />
         <div className="flex flex-col items-center justify-around">
-                          <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-8xl  text-[#9f0712]">
+                          <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-5xl  text-[#9f0712]">
                           Rice Tales
                           </h1>
-                    <img src={MM} className="w-90" alt="" />
+                    <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="" />
                   </div>
   <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 

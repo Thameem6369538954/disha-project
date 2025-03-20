@@ -35,7 +35,7 @@ const ModernTestimonialsCarousel = () => {
   return (
     <div className="bg-gradient-to-b from-white py-5 px-6 md:px-20">
  <div className="flex flex-col items-center justify-center mb-10">
-        <h1 className="font-[Wonder] text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl py-5 text-[#9f0712] drop-shadow-md">
+        <h1 className="font-[Wonder] text-center text-4xl sm:text-5xl md:text-6xl lg:text-5xl py-5 text-[#9f0712] drop-shadow-md">
         What Our Clients Say
         </h1>
         <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="MM" />

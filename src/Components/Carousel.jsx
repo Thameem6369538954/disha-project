@@ -47,10 +47,10 @@ const Carousel = () => {
       <div className="relative">
   
        <div className="flex flex-col items-center justify-around">
-                    <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-8xl  text-[#9f0712]">
+                    <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-5xl  text-[#9f0712]">
                     Our Products
                     </h1>
-              <img src={MM} className="w-90" alt="" />
+              <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="" />
             </div>
       </div>
     </div>

@@ -32,19 +32,43 @@
 ::-webkit-scrollbar {
   display: none;
 }
-/* Global font smoothing fix */
-/* App.css */
+/* General page styling */
 html, body {
-  height: auto;
-  overflow: auto;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-[data-scroll-container] {
-  min-height: 100vh;
-  position: relative;
+/* Locomotive Scroll main container */
+.scroll-container {
+  min-height: 100vh !important;
+  height: auto !important;
 }
 
+/* Ensure each scroll section takes the full viewport height */
 [data-scroll-section] {
-  position: relative;
-  z-index: 1;
+  min-height: 90vh;
+  height: auto !important;
+  will-change: transform;
 }
+
+/* Fix issues with fixed position elements */
+[data-scroll-container] [data-scroll-section] {
+  will-change: transform;
+}
+
+/* Adjustments for mobile and tablets */
+@media (max-width: 1024px) {
+  [data-scroll-container] {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-scroll-container] {
+    min-height: 100%;
+  }
+}
+

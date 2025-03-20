@@ -9,8 +9,12 @@ import './App.css';
 
 function App() {
   useEffect(() => {
+    const scrollContainer = document.querySelector('[data-scroll-container]');
+
+    if (!scrollContainer) return;
+
     const scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
+      el: scrollContainer,
       smooth: true,
       lerp: 0.08,
       smartphone: {
@@ -21,33 +25,33 @@ function App() {
       },
     });
 
-    const refreshScroll = () => {
+    // ResizeObserver to auto-update scroll height on dynamic changes
+    const observer = new ResizeObserver(() => {
+      scroll.update();
+    });
+
+    observer.observe(scrollContainer);
+
+    // Ensure scroll updates on window resize
+    const handleResize = () => {
       scroll.update();
     };
-
-    window.addEventListener('resize', refreshScroll);
-    window.addEventListener('load', refreshScroll);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', refreshScroll);
-      window.removeEventListener('load', refreshScroll);
-      if (scroll) scroll.destroy();
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+      scroll.destroy();
     };
   }, []);
 
   return (
     <BrowserRouter>
-      {/* Sticky Navbar */}
       <Navbar />
-
-      {/* Locomotive Scroll container */}
-      <div data-scroll-container className="min-h-screen">
-        {/* Home Section */}
+      <div data-scroll-container className="scroll-container">
         <div data-scroll-section>
           <Home />
         </div>
-
-        {/* Footer Section */}
         <div data-scroll-section>
           <Footer />
         </div>
