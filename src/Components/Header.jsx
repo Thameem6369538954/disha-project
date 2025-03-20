@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <div className="relative w-full mt-16">
+    <div className="relative w-full mt-20">
       <Slider {...settings} className="relative">
         {/* Slide 1 */}
         <div className="relative w-full h-[80vh] sm:h-[85vh] lg:h-[90vh]">

@@ -7,6 +7,8 @@ import idly from '../Images/idly.png';
 import masoori from '../Images/masoori.png';
 import ponni from '../Images/ponni.png';
 import MM from "../Images/MM.png"
+import MD from "../Images/MD.png"
+import MDA from "../Images/MDA.png"
 const Carousel = () => {
   const products = [
     {
@@ -36,8 +38,12 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="relative w-full min-h-[70vh] mt-8" id='pro'>
-<div className="my-8">
+    <div
+    // style={{backgroundImage:`url(${MD})`, backgroundSize:"cover",backgroundPosition:"center"}}
+    className=" bg-gradient-to-b from-white  relative py-5 w-full md:min-h-auto" id='pro'>
+<div className="relative">
+    <img src={MD} className='absolute md:w-full -z-10 top-190 sm:top-90 md:top-90 lg:top-0' alt="" />
+    {/* <img src={MD} className='absolute md:w-full -z-10' alt="" /> */}
       <div className="relative">
   
        <div className="flex flex-col items-center justify-around">

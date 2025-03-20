@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import FooterImg from "../Images/FooterImg.jpg";
+import FooterImg from "../Images/FooterImg.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <div
-  className="text-white py-10 font-[poppins] bg-cover bg-center bg-no-repeat min-h-[100vh]"
+  className="text-white py-10 font-[poppins] bg-cover bg-center bg-no-repeat min-h-[90vh]"
   style={{ backgroundImage: `url(${FooterImg})` }}
 >
       <div className="absolute inset-0 bg-black/60 z-0"></div>

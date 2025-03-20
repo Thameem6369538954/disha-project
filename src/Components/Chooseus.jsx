@@ -8,7 +8,7 @@ import { PiPlantLight } from "react-icons/pi";
 import { VscBook } from "react-icons/vsc";
 import { GiWindTurbine } from "react-icons/gi";
 import MM from "../Images/MM.png"
-import Nw from "../Images/Nw.jpeg"
+import RiceA from "../Images/RiceA.png"
 
 
 const reasons = [
@@ -46,11 +46,13 @@ const reasons = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="my-12 px-4 font-[poppins] bg-cover bg-center  min-h-auto p-10" 
-    style={{backgroundImage :`url(${Nw})`}
-  }
+    <div className="relative bg-gradient-to-b from-white  px-4 font-[poppins] bg-cover bg-center  min-h-auto p-10 " 
+  //   style={{backgroundImage :`url(${Nw})`}
+  // }
     >
       {/* Section Heading with animation */}
+  <img src={RiceA} className="absolute inset-0 w-full h-full object-cover -z-10" alt="" />
+     
       <div className="text-center mb-8">
         <div className="relative inline-block">
          

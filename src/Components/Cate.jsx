@@ -10,7 +10,7 @@ const Cate = () => {
     <div>
      
         <div>
-        <div className=" py-10 px-4">
+        <div className="bg-gradient-to-b from-white py-10 px-4">
         <div className="flex flex-col items-center justify-around">
                           <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-8xl  text-[#9f0712]">
                           Rice Tales

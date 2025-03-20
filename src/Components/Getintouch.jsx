@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { BiHappyHeartEyes } from "react-icons/bi";
 import map from "../Images/map.jpg"
+import MM from "../Images/MM.png"
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,14 +22,24 @@ const GetInTouch = () => {
   };
 
   return (
+
+    <div className="bg-gradient-to-b from-white">
+
     <section
     style={{backgroundImage:`url(${map})`}}
-    className="py-16 px-4  font-[poppins] bg-center bg-cover relative" id="con">
+    className="  py-16 px-4  font-[poppins] bg-center bg-cover relative" id="con">
+        <div className="flex flex-col items-center justify-around">
+                              <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-5 text-white">
+                              Contact with us
+                              </h1>
+                        <img src={MM} className="w-70" alt="" />
+                      </div>
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-around">
+
         {/* Left Side: Heading & Paragraph */}
         <div className="mb-8 md:mb-0 md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl font-bold text-[#9f0712] mb-4">Why We Different with Other?</h2>
-          <p className="text-lg text-gray-600 ">
+          {/* <h2 className="text-3xl font-bold text-[#9f0712] mb-4">Why We Different with Other?</h2> */}
+          <p className="text-md text-black p-5 bg-white rounded-xl ">
           We assure to standby the quality of our products with a year round supply in combination with skilled labour and technology. Aged rice is a healthier option.The process of ageing brings about structural changes along with enhanced flavor and texture. Our year-round supply ensures, we empower our people, farmers, and the community who help us grow.We leverage world-class rice processing technologies to ensure customer satisfaction and timely delivery.
           </p>
           <div class="grid grid-cols-2 gap-6 m-2">
@@ -58,10 +69,9 @@ const GetInTouch = () => {
 
         {/* Right Side: Form */}
         <div className="md:w-1/3 w-full">
-        <h1 className="text-3xl font-bold text-[#9f0712] mb-4" >Get in Touch</h1>
           {submitted ? (
             // Show this after submission
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center text-[#9f0712]">
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center text-[#5fcf80]">
               <h3 className="text-xl font-semibold">Thank you for submitting!</h3>
               <p className="mt-2">We have received your message and will get back to you soon.</p>
             </div>
@@ -127,7 +137,7 @@ const GetInTouch = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#9f0712] text-white py-3 rounded-lg mt-4 hover:bg-[#4CAF50] transition duration-300"
+                className="w-full bg-[#5fcf80] text-white py-3 rounded-lg mt-4 hover:bg-[#4CAF50] transition duration-300"
               >
                 Submit
               </button>
@@ -136,6 +146,7 @@ const GetInTouch = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
