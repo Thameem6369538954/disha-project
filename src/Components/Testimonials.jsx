@@ -6,14 +6,14 @@ import "swiper/css/pagination";
 import MM from "../Images/MM.png";
 const testimonials = [
   {
-    name: "Amit Sharma",
-    position: "Retailer",
-    feedback: "Their rice products are consistently high quality, my customers are always satisfied!",
+    name: "Chef Meera",
+    position: "Chennai",
+    feedback: "Cauvery Rice transformed our biryani—it’s the secret ingredient!",
     avatar: "https://i.imgur.com/6fLZp2c.jpg",
   },
   {
-    name: "Pooja Singh",
-    position: "Restaurant Owner",
+    name: "Aarthi",
+    position: "Dubai",
     feedback: "Top-grade rice! My dishes taste authentic and customers love it!",
     avatar: "https://i.imgur.com/NXhRvoF.jpg",
   },

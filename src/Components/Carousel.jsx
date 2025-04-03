@@ -1,59 +1,62 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';  // For Swiper v7 and above
+import 'swiper/css';
 import { motion } from 'framer-motion';
-import boiled from '../Images/boiled.png';
-import idly from '../Images/idly.png';
-import masoori from '../Images/masoori.png';
-import ponni from '../Images/ponni.png';
-import MM from "../Images/MM.png"
-import MD from "../Images/MD.png"
-import MDA from "../Images/MDA.png"
+import { Star } from 'lucide-react';
+
+// Import local images for products and background
+import ponni from "../Images/ponni.png";
+import bgImage from "../Images/63.jpg"
 const Carousel = () => {
   const products = [
     {
-      image: boiled,
-      title: 'Ponni boiled rice',
-      price: '$49.99',
-      description: 'A great product with amazing features.',
-    },
-    {
-      image: masoori,
-      title: 'Masoori rice',
-      price: '$59.99',
-      description: 'An excellent choice for everyday use.',
+      image: ponni,
+      title: 'Classic Ponni Raw Rice',
+      description:
+        'Perfect for daily meals, idlis, and dosas. Available in 1kg, 5kg, and 10kg packs.',
+      rating: 4.5,
     },
     {
       image: ponni,
-      title: 'Ponni Rice',
-      price: '$39.99',
-      description: 'Affordable and reliable for all your needs.',
+      title: 'Aged Ponni Sella Rice',
+      description:
+        'Ideal for biryanis, fried rice, and gourmet dishes. 14-month aged, extra-long grains, aromatic richness.',
+      rating: 4.8,
     },
     {
-      image: idly,
-      title: 'Idly Rice',
-      price: '$39.99',
-      description: 'Affordable and reliable for all your needs.',
+      image: ponni,
+      title: 'Organic Ponni Rice',
+      description:
+        'Certified organic – perfect for health-conscious families.',
+      rating: 4.3,
+    },
+    {
+      image: ponni,
+      title: 'Bulk & Wholesale',
+      description:
+        'Custom packaging for hotels, restaurants, and exporters.',
+      rating: 4.0,
     },
   ];
 
   return (
     <div
-    // style={{backgroundImage:`url(${MD})`, backgroundSize:"cover",backgroundPosition:"center"}}
-    className=" bg-gradient-to-b from-white  relative py-5 w-full md:min-h-auto" id='pro'>
-<div className="relative">
-    <img src={MD} className='absolute md:w-full -z-10 top-190 sm:top-90 md:top-90 lg:top-0' alt="" />
-    {/* <img src={MD} className='absolute md:w-full -z-10' alt="" /> */}
-      <div className="relative">
-  
-       <div className="flex flex-col items-center justify-around">
-                    <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-5xl  text-[#9f0712]">
-                    Our Products
-                    </h1>
-              <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="" />
-            </div>
+      id="pro"
+      className="relative py-16 px-6 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bgImage})` }} 
+    >
+      <div className="relative z-10 flex flex-col items-center justify-center mb-12 gap-3 bg-white p-3">
+        <h1 className="font-[Wonder] text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-[#9f0712]">
+          Our Products
+        </h1>
+        <h1 className="font-[Wonder] text-center text-3xl sm:text-4xl md:text-5xl lg:text-3xl text-[#9f0712]">
+         The Cauvery Collection
+        </h1>
+        <p className="font-[Poppins] text-center text-xl text-gray-800 mt-2">
+          Crafted for Every Kitchen, Loved by Every Palate
+        </p>
       </div>
-    </div>
+
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -66,25 +69,47 @@ const Carousel = () => {
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 10 },
           768: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 5, spaceBetween: 30 },
+          1024: { slidesPerView: 4, spaceBetween: 30 },
         }}
       >
-        {products.map((product, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-90 object-cover rounded-lg shadow-lg"
-              />
-              <div className="absolute bottom-4 left-4 text-white bg-[#9f0712] bg-opacity-60 p-2 rounded-lg">
-                <h3 className="text-xl font-[Poppins]">{product.title}</h3>
-                {/* <p className="text-lg font-[Poppins] text-yellow-500">{product.price}</p>
-                <p className="mt-2 font-[Poppins] text-sm">{product.description}</p> */}
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
+      {products.map((product, index) => (
+  <SwiperSlide key={index}>
+    <motion.div
+      className="relative group"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+    >
+      {/* Product Image with increased height */}
+      <img
+        src={product.image}
+        alt={product.title}
+        className="w-full h-80 object-cover rounded-lg shadow-lg"
+      />
+      {/* Hover Overlay */}
+      <motion.div
+        className="absolute inset-0 rounded-lg bg-gradient-to-t from-[#9f0712] via-transparent to-transparent flex flex-col justify-end p-4"
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <h3 className="text-xl font-[Poppins] text-white font-semibold">
+          {product.title}
+        </h3>
+        <p className="mt-1 font-[Poppins] text-sm text-white">
+          {product.description}
+        </p>
+        <div className="flex items-center mt-2">
+          <Star className="w-4 h-4 text-yellow-400 mr-1" />
+          <span className="text-sm text-white">{product.rating}</span>
+        </div>
+      </motion.div>
+    </motion.div>
+  </SwiperSlide>
+))}
+
+
       </Swiper>
     </div>
   );

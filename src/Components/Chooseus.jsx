@@ -13,24 +13,28 @@ import RiceA from "../Images/RiceA.png"
 
 const reasons = [
   {
-    title: "Diabetic Friendly",
-    description: "Healthy eating helps you strike the right balance, necessary for managing your blood sugar levels.",
+    title: "Purity Guaranteed",
+    description: "Zero pesticides | Non-GMO | Certified by [Organic Certification Body].",
+    descriptiona: "We test every batch—because your family’s health is non-negotiable.",
     icon: <PiArrowsClockwiseLight className="text-4xl text-[#9f0712]" />, // Quality icon
   },
   {
-    title: "High Fiber Content",
-    description: "Grains rich in fiber aids in keeping your hunger satiated for longer and improves digestion.",
-    icon: <TbWorldUpload  className="text-4xl text-[#9f0712]" />, // Trust icon
+    title: "Flavor Perfected by Time",
+    description: "The 14-month aging process locks in nutrients and amplifies natural flavors.",
+    descriptiona: "Taste the difference patience makes.",
+    icon: <PiPlantLight className="text-4xl text-[#9f0712]" />, // Gift icon
   },
   {
-    title: "Automated Processing",
-    description: "Automated processing helps in retaining the colour and the nutritional value of rice.",
+    title: "Innovation Meets Tradition",
+    description: "Poovalur & Lalgudi Mills: Equipped with AI-driven sorting and UV sanitization.",
+    descriptiona: "Where robotic precision meets human care.",
     icon: <MdOutlineAutoMode className="text-4xl text-[#9f0712]" />, // Support icon
   },
   {
-    title: "Laser Quality Control",
-    description: "This cutting-edge technology aids in accurate testing of products to ensure adherence to quality.",
-    icon: <PiPlantLight className="text-4xl text-[#9f0712]" />, // Gift icon
+    title: "Global Standards, Local Roots",
+    description: "Exported to 15+ countries | Compliant with FSSAI, EU, and USDA standards.",
+    icon: <TbWorldUpload  className="text-4xl text-[#9f0712]" />, // Trust icon
+
   },
   {
     title: "14 Month Old grains",
@@ -57,11 +61,14 @@ const WhyChooseUs = () => {
         <div className="relative inline-block">
          
           <div className="flex flex-col items-center justify-around">
-                        <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-5xl py-5 text-[#9f0712]">
+                        <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-5xl py-2 text-[#9f0712]">
                         Why Choose Us?
                         </h1>
                   <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="" />
                 </div>
+                        <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-4xl py-5 text-[#9f0712]">
+                        Why Millions Trust Cauvery Rice
+                        </h1>
         </div>
       </div>
 
@@ -89,7 +96,13 @@ const WhyChooseUs = () => {
             <h3 className="text-xl font-semibold text-center mb-2 text-[#9f0712]">
               {reason.title}
             </h3>
+            <ul>
+              <li>
             <p className="text-md text-center text-gray-500">{reason.description}</p>
+              </li>
+              <li>            <p className="text-md text-center text-gray-500">{reason.descriptiona}</p>
+              </li>
+            </ul>
           </motion.div>
         ))}
       </div>

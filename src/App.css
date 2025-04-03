@@ -48,7 +48,7 @@ html, body {
 
 /* Ensure each scroll section takes the full viewport height */
 [data-scroll-section] {
-  min-height: 90vh;
+  min-height: 40vh;
   height: auto !important;
   will-change: transform;
 }

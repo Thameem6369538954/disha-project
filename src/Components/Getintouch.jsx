@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-// import { BiHappyHeartEyes } from "react-icons/bi";
-import map from "../Images/map.jpg"
-import MM from "../Images/MM.png"
-const GetInTouch = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false); // State to track if form is submitted
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaPhone, FaWhatsapp, FaEnvelope, FaGlobe } from "react-icons/fa";
+
+const ContactUs = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", query: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,138 +11,90 @@ const GetInTouch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission (could be an API call)
-    console.log(formData);
-    setSubmitted(true); // Set submitted state to true after submission
+    alert("Thank you for reaching out! We will get back to you soon.");
+    setFormData({ name: "", email: "", query: "" });
   };
 
   return (
+    <section className="py-20 bg-gray-100 px-4 md:px-20" id="contact">
+      <motion.h2
+        className="text-4xl font-bold text-center mb-10"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        We’re Here for You
+      </motion.h2>
 
-    <div className="bg-gradient-to-b from-white">
+      <div className="grid md:grid-cols-2 gap-10">
+        <motion.div
+          className="space-y-6 bg-white p-6 rounded-lg shadow-lg"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="flex items-center space-x-4">
+            <FaWhatsapp className="text-green-500 text-3xl" />
+            <p>24/7 WhatsApp Support</p>
+          </div>
+          <div className="flex items-center space-x-4">
+            <FaPhone className="text-blue-500 text-3xl" />
+            <p>Call Us Anytime</p>
+          </div>
+          <div className="flex items-center space-x-4">
+            <FaEnvelope className="text-red-500 text-3xl" />
+            <p>Email: support@cauveryrice.com</p>
+          </div>
+          <div className="flex items-center space-x-4">
+            <FaGlobe className="text-purple-500 text-3xl" />
+            <p>Seamless Global Shipping</p>
+          </div>
+        </motion.div>
 
-    <section
-    style={{backgroundImage:`url(${map})`}}
-    className="  py-16 px-4  font-[poppins] bg-center bg-cover relative" id="con">
-        <div className="flex flex-col items-center justify-around">
-                              <h1 className="font-[Wonder] text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-5 text-white">
-                              Contact with us
-                              </h1>
-                        <img src={MM} className="w-70" alt="" />
-                      </div>
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-around">
-
-        {/* Left Side: Heading & Paragraph */}
-        <div className="mb-8 md:mb-0 md:w-1/2 text-center md:text-left">
-          {/* <h2 className="text-3xl font-bold text-[#9f0712] mb-4">Why We Different with Other?</h2> */}
-          <p className="text-md text-black p-5 bg-white rounded-xl ">
-          We assure to standby the quality of our products with a year round supply in combination with skilled labour and technology. Aged rice is a healthier option.The process of ageing brings about structural changes along with enhanced flavor and texture. Our year-round supply ensures, we empower our people, farmers, and the community who help us grow.We leverage world-class rice processing technologies to ensure customer satisfaction and timely delivery.
-          </p>
-          <div class="grid grid-cols-2 gap-6 m-2">
-  <div class="bg-white p-6 rounded-lg text-center shadow-lg">
-    <h3 class="text-lg font-semibold mb-3 text-[#5fcf80]">245</h3>
-    <p class="text-sm mb-3 text-gray-700">Happy Customers</p>
-    
-   </div>
-  <div class="bg-white p-6 rounded-lg text-center shadow-lg">
-    <h3 class="text-lg font-semibold mb-3 text-[#5fcf80]">358</h3>
-    <p class="text-sm mb-3 text-gray-700">Project Clear</p>
-    
-  </div>
-  <div class="bg-white p-6 rounded-lg text-center shadow-lg">
-    <h3 class="text-lg font-semibold mb-3 text-[#5fcf80]">78</h3>
-    <p class="text-sm mb-3 text-gray-700">Winning Awards</p>
-    
-  </div>
-  <div class="bg-white p-6 rounded-lg text-center shadow-lg">
-    <h3 class="text-lg font-semibold mb-3 text-[#5fcf80]">128</h3>
-    <p class="text-sm mb-3 text-gray-700">Company Member</p>
-    
-  </div>
-</div>
-
-        </div>
-
-        {/* Right Side: Form */}
-        <div className="md:w-1/3 w-full">
-          {submitted ? (
-            // Show this after submission
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center text-[#5fcf80]">
-              <h3 className="text-xl font-semibold">Thank you for submitting!</h3>
-              <p className="mt-2">We have received your message and will get back to you soon.</p>
-            </div>
-          ) : (
-            // Show the form if not submitted
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white p-8 rounded-lg shadow-lg space-y-4"
-            >
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-lg font-medium text-gray-700"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full mt-2 p-3 border border-gray-300 rounded-lg"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-lg font-medium text-gray-700"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full mt-2 p-3 border border-gray-300 rounded-lg"
-                  placeholder="Your email address"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-lg font-medium text-gray-700"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full mt-2 p-3 border border-gray-300 rounded-lg"
-                  placeholder="Your message"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#5fcf80] text-white py-3 rounded-lg mt-4 hover:bg-[#4CAF50] transition duration-300"
-              >
-                Submit
-              </button>
-            </form>
-          )}
-        </div>
+        <motion.form
+          onSubmit={handleSubmit}
+          className="bg-white p-6 rounded-lg shadow-lg space-y-4"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-3 border rounded-lg"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 border rounded-lg"
+            required
+          />
+          <textarea
+            name="query"
+            placeholder="Your Query"
+            value={formData.query}
+            onChange={handleChange}
+            className="w-full p-3 border rounded-lg"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full bg-yellow-500 text-black font-bold py-3 rounded-lg shadow-lg hover:bg-yellow-600"
+          >
+            Submit
+          </button>
+        </motion.form>
       </div>
     </section>
-    </div>
   );
 };
 
-export default GetInTouch;
+export default ContactUs;
+  

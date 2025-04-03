@@ -9,6 +9,10 @@ import Bennar from '../Components/Bennar'
 import Cate from '../Components/Cate'
 import MM from "../Images/MM.png"
 import bg from "../Images/bg.jpg"
+import Timeline from "../Components/Timeline"
+import ProcessSection from "../Components/ProcessSection"
+import WheretoBuy from "../Components/WheretoBuy"
+import Blog from "../Components/Blog"
 
 
 
@@ -22,12 +26,16 @@ const Home = () => {
   <div className="relative z-10 flex flex-col min-h-screen">
   <div id='home'>
         <Header />
+     <Timeline />
      <Carousel />
      <Aboutus />
      <Bennar />
      <Chooseus />
+     <ProcessSection />
      <Cate />
+     <Blog />
      <Testimonials />
+     <WheretoBuy />
      <GetInTouch />
     </div>
   </div>
