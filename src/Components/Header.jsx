@@ -24,7 +24,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden mt-20">
+    <section className="relative w-full min-h-screen overflow-hidden ">
       <Slider {...settings} className="w-full md:h-full">
         <div className="relative w-full min-h-[500px] md:min-h-screen">
           {/* Background Video */}
@@ -81,7 +81,7 @@ const HeroSection = () => {
                 Shop Now
               </motion.button>
               <motion.button
-                className="px-6 py-3 bg-white text-black font-bold rounded-lg shadow-lg hover:bg-gray-200"
+                className="px-6 py-3  text-black font-bold rounded-lg shadow-lg hover:bg-gray-200"
                 whileHover={{ scale: 1.1 }}
               >
                 Discover Our Story

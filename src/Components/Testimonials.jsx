@@ -35,7 +35,7 @@ const ModernTestimonialsCarousel = () => {
   return (
     <div className="bg-gradient-to-b from-white py-5 px-6 md:px-20">
  <div className="flex flex-col items-center justify-center mb-10">
-        <h1 className="font-[Wonder] text-center text-4xl sm:text-5xl md:text-6xl lg:text-5xl py-5 text-[#9f0712] drop-shadow-md">
+        <h1 className="font-[Wonder] text-4xl sm:text-5xl md:text-6xl text-[#9f0712] tracking-tight text-center drop-shadow-md p-5">
         What Our Clients Say
         </h1>
         <img src={MM} className="w-32 md:w-48 lg:w-56 mb-6" alt="MM" />
@@ -53,7 +53,7 @@ const ModernTestimonialsCarousel = () => {
       >
         {testimonials.map((t, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+            <div className=" rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
               <div className="flex flex-col items-center text-center">
                 <img
                   src={t.avatar}

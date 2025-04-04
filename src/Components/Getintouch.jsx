@@ -28,7 +28,7 @@ const ContactUs = () => {
 
       <div className="grid md:grid-cols-2 gap-10">
         <motion.div
-          className="space-y-6 bg-white p-6 rounded-lg shadow-lg"
+          className="space-y-6  p-6 rounded-lg shadow-lg"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -53,7 +53,7 @@ const ContactUs = () => {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white p-6 rounded-lg shadow-lg space-y-4"
+          className=" p-6 rounded-lg shadow-lg space-y-4"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}

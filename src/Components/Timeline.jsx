@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Leaf, Truck, Store } from "lucide-react";
-import bgImage from "../Images/bgImage.jpg"; // Import local image
+import KK from "../Images/KK.png"; // Import local image
 
 const timelineData = [
   { icon: <Leaf className="w-12 h-12 text-green-600" />, title: "Seedling Stage", description: "Carefully selected seeds are sown in nutrient-rich soil.", delay: 0.2 },
@@ -12,8 +12,8 @@ const timelineData = [
 export default function HorizontalTimeline() {
   return (
     <div
-      className="relative py-16 px-6 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${bgImage})` }} // Using local background image
+      className="relative py-16 px-6 bg-cover bg-center bg-no-repeat "
+      style={{ backgroundImage: `url(${KK})` }} // Using local background image
     >
       {/* Section Heading */}
       <motion.h2
@@ -50,7 +50,7 @@ export default function HorizontalTimeline() {
         {timelineData.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex flex-col items-center text-center bg-white shadow-lg p-6 w-full max-w-xs rounded-2xl border border-gray-200 z-10"
+            className="relative flex flex-col items-center text-center  shadow-lg p-6 w-full max-w-xs rounded-2xl border border-gray-200 z-10 bg-white font-[poppins]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

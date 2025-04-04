@@ -20,7 +20,7 @@ const BlogSection = () => {
     <section className="py-20 bg-gray-100">
       <div className="container mx-auto text-center">
         <motion.h2
-          className="text-4xl font-bold mb-6"
+          className="font-[Wonder] text-4xl sm:text-5xl md:text-6xl text-[#9f0712] tracking-tight text-center drop-shadow-md p-2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -33,7 +33,7 @@ const BlogSection = () => {
           {blogPosts.map((post, index) => (
             <motion.div
               key={index}
-              className="overflow-hidden rounded-2xl shadow-lg bg-white"
+              className="overflow-hidden rounded-2xl shadow-lg "
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >

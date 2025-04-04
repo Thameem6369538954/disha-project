@@ -4,7 +4,7 @@ import ponni from "../Images/ponni.png"
 const Bennar = () => {
   return (
     <div>
-        <div className='mt-20 w-full min-h-auto flex items-center justify-center'>
+        <div className=' w-full min-h-auto flex items-center justify-center '>
             <div className='relative bg-red-800'>
                 <img src={bnr} alt="" />
                 <div className="absolute -top-21 md:-top-5 md:left-40 right-40 flex" >

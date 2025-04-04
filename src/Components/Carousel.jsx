@@ -42,10 +42,10 @@ const Carousel = () => {
   return (
     <div
       id="pro"
-      className="relative py-16 px-6 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${bgImage})` }} 
+      className="relative py-16 px-6 bg-cover bg-center bg-no-repeat "
+      // style={{ backgroundImage: `url(${bgImage})` }} 
     >
-      <div className="relative z-10 flex flex-col items-center justify-center mb-12 gap-3 bg-white p-3">
+      <div className="relative z-10 flex flex-col items-center justify-center mb-12 gap-3  p-3">
         <h1 className="font-[Wonder] text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-[#9f0712]">
           Our Products
         </h1>

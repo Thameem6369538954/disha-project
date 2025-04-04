@@ -3,10 +3,14 @@ import { motion } from 'framer-motion';
 
 // Import local images for logos and recipes
 import New from "../Images/New.jpg"
+import FooterImg from "../Images/FooterImg.png"
 
 const SustainabilityAndRecipes = () => {
   return (
-    <div className="py-16 px-6 bg-gray-50">
+    <div className="py-16 px-6 bg-gray-50 relative"
+    style={{ backgroundImage: `url(${FooterImg})` }} 
+    >
+      {/* <img src={FooterImg} className="absolute " alt="" /> */}
       {/* Sustainability Section */}
       <motion.div 
         className="max-w-6xl mx-auto mb-16"
@@ -14,13 +18,13 @@ const SustainabilityAndRecipes = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-bold text-[#9f0712] text-center mb-4">
+        <h2 className="font-[Wonder] text-4xl sm:text-5xl md:text-6xl text-[#9f0712] tracking-tight text-center drop-shadow-md p-2">
           Growing Rice, Growing Hope
         </h2>
         <p className="text-xl font-[Poppins] text-center text-gray-700 mb-8">
           Sustainability: Nurturing Earth, Empowering Communities
         </p>
-        <div className="space-y-4 text-gray-800 text-lg mb-8">
+        <div className="space-y-4 text-gray-800 text-lg mb-8 font-[poppins] grid place-items-center">
           <p>
             <strong>Zero-Waste Farming:</strong> Rice husk recycled as biofuel for mills.
           </p>
@@ -48,13 +52,13 @@ const SustainabilityAndRecipes = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <h2 className="text-4xl font-bold text-[#9f0712] text-center mb-8">
+        <h2 className="font-[Wonder] text-4xl sm:text-5xl md:text-6xl text-[#9f0712] tracking-tight text-center drop-shadow-md p-5">
           Unlock the Magic of Cauvery Rice
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Grandma's Kitchen */}
           <motion.div 
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className=" rounded-lg shadow-lg overflow-hidden"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
           >
@@ -74,7 +78,7 @@ const SustainabilityAndRecipes = () => {
           </motion.div>
           {/* Modern Twists */}
           <motion.div 
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className=" rounded-lg shadow-lg overflow-hidden"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
           >
@@ -94,7 +98,7 @@ const SustainabilityAndRecipes = () => {
           </motion.div>
           {/* Chef's Corner */}
           <motion.div 
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className=" rounded-lg shadow-lg overflow-hidden"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
           >

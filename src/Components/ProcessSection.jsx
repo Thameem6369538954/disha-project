@@ -14,19 +14,27 @@ const CauveryProcess = () => {
   return (
     <section className="py-16 bg-gray-100 text-center font-[Poppins]">
       <motion.h2 
-        className="text-4xl font-bold text-gray-800 mb-10"
+        className="font-[Wonder] text-4xl sm:text-5xl md:text-6xl text-[#9f0712] tracking-tight drop-shadow-md p-2"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        From Farm to Table: The Cauvery Process
+        From Farm to Table
+      </motion.h2>
+      <motion.h2 
+        className="font-[Wonder] text-4xl sm:text-5xl md:text-4xl text-[#9f0712] tracking-tight drop-shadow-md p-2"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        The Cauvery Process
       </motion.h2>
       
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {steps.map((step, index) => (
           <motion.div 
             key={index} 
-            className="p-6 bg-white shadow-xl rounded-xl flex flex-col items-center text-center"
+            className="p-6  shadow-xl rounded-xl flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}

@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
         {reasons.map((reason, index) => (
           <motion.div
             key={index}
-            className="relative flex flex-col items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            className="relative flex flex-col items-center p-6  rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -93,7 +93,7 @@ const WhyChooseUs = () => {
             </motion.div>
 
             {/* Title and Description */}
-            <h3 className="text-xl font-semibold text-center mb-2 text-[#9f0712]">
+            <h3 className="text-xl font-semibold text-center mb-2 text-[#9f0712] ">
               {reason.title}
             </h3>
             <ul>
